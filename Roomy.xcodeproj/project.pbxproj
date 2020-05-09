@@ -3,27 +3,55 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6047DE492454F5570032EF7F /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047DE482454F5570032EF7F /* Request.swift */; };
+		6047DE4D2454F5A40032EF7F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047DE4C2454F5A40032EF7F /* Router.swift */; };
+		6047DE4F24552BA40032EF7F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047DE4E24552BA40032EF7F /* SignUpViewController.swift */; };
+		60824C52245349D1005BF32E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60824C51245349D1005BF32E /* User.swift */; };
+		60824C54245349E5005BF32E /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60824C53245349E5005BF32E /* Room.swift */; };
+		608CFCBD2449CDBF00EBBCFD /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CFCBC2449CDBF00EBBCFD /* HomeTableViewController.swift */; };
+		608CFCBF2449CDD300EBBCFD /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CFCBE2449CDD300EBBCFD /* ListingViewController.swift */; };
+		608CFCC12449CE0F00EBBCFD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CFCC02449CE0F00EBBCFD /* SignInViewController.swift */; };
+		608CFCC32449CE3700EBBCFD /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CFCC22449CE3700EBBCFD /* LandingViewController.swift */; };
+		60BAE372245A6FD100041374 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BAE371245A6FD100041374 /* RealmManager.swift */; };
 		60CEE19E2415A2BE0026C3A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CEE19D2415A2BE0026C3A3 /* AppDelegate.swift */; };
 		60CEE1A02415A2BE0026C3A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CEE19F2415A2BE0026C3A3 /* SceneDelegate.swift */; };
-		60CEE1A22415A2BE0026C3A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CEE1A12415A2BE0026C3A3 /* ViewController.swift */; };
 		60CEE1A52415A2BE0026C3A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60CEE1A32415A2BE0026C3A3 /* Main.storyboard */; };
 		60CEE1A72415A2C00026C3A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60CEE1A62415A2C00026C3A3 /* Assets.xcassets */; };
 		60CEE1AA2415A2C00026C3A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60CEE1A82415A2C00026C3A3 /* LaunchScreen.storyboard */; };
+		60ED2DC12458E29E00450785 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ED2DBF2458E29E00450785 /* RoomTableViewCell.swift */; };
+		60ED2DC22458E29E00450785 /* RoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60ED2DC02458E29E00450785 /* RoomTableViewCell.xib */; };
+		60ED2DC424591D0900450785 /* AddRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ED2DC324591D0900450785 /* AddRoomViewController.swift */; };
+		85BA0DF2651B01EBCD956524 /* Pods_Roomy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6AFCEF61CB9B60195C338A /* Pods_Roomy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08E00D3A1A2616B1E87B14D7 /* Pods-Roomy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roomy.release.xcconfig"; path = "Target Support Files/Pods-Roomy/Pods-Roomy.release.xcconfig"; sourceTree = "<group>"; };
+		6047DE482454F5570032EF7F /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		6047DE4C2454F5A40032EF7F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		6047DE4E24552BA40032EF7F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		60824C51245349D1005BF32E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		60824C53245349E5005BF32E /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		608CFCBC2449CDBF00EBBCFD /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		608CFCBE2449CDD300EBBCFD /* ListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
+		608CFCC02449CE0F00EBBCFD /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		608CFCC22449CE3700EBBCFD /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		60BAE371245A6FD100041374 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		60CEE19A2415A2BE0026C3A3 /* Roomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roomy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60CEE19D2415A2BE0026C3A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60CEE19F2415A2BE0026C3A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		60CEE1A12415A2BE0026C3A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		60CEE1A42415A2BE0026C3A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60CEE1A62415A2C00026C3A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60CEE1A92415A2C00026C3A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60CEE1AB2415A2C00026C3A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60ED2DBF2458E29E00450785 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
+		60ED2DC02458E29E00450785 /* RoomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomTableViewCell.xib; sourceTree = "<group>"; };
+		60ED2DC324591D0900450785 /* AddRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoomViewController.swift; sourceTree = "<group>"; };
+		68B404140793F692D7C01007 /* Pods-Roomy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roomy.debug.xcconfig"; path = "Target Support Files/Pods-Roomy/Pods-Roomy.debug.xcconfig"; sourceTree = "<group>"; };
+		BD6AFCEF61CB9B60195C338A /* Pods_Roomy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Roomy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +59,95 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85BA0DF2651B01EBCD956524 /* Pods_Roomy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		602BD8962450A59000EC1024 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				60CEE1A32415A2BE0026C3A3 /* Main.storyboard */,
+				60CEE1A82415A2C00026C3A3 /* LaunchScreen.storyboard */,
+				60CEE1A62415A2C00026C3A3 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		602BD8982450A9D900EC1024 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6047DE482454F5570032EF7F /* Request.swift */,
+				6047DE4C2454F5A40032EF7F /* Router.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		60824C5024534955005BF32E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				60CEE1AB2415A2C00026C3A3 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		60824C5524536B77005BF32E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				60ED2DBF2458E29E00450785 /* RoomTableViewCell.swift */,
+				60ED2DC02458E29E00450785 /* RoomTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		608CFCC42449CEEE00EBBCFD /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				60CEE19D2415A2BE0026C3A3 /* AppDelegate.swift */,
+				60CEE19F2415A2BE0026C3A3 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		608CFCC52449CF1300EBBCFD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				608CFCC22449CE3700EBBCFD /* LandingViewController.swift */,
+				608CFCC02449CE0F00EBBCFD /* SignInViewController.swift */,
+				6047DE4E24552BA40032EF7F /* SignUpViewController.swift */,
+				608CFCBC2449CDBF00EBBCFD /* HomeTableViewController.swift */,
+				60ED2DC324591D0900450785 /* AddRoomViewController.swift */,
+				608CFCBE2449CDD300EBBCFD /* ListingViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		608CFCC62449D1A600EBBCFD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				60824C51245349D1005BF32E /* User.swift */,
+				60824C53245349E5005BF32E /* Room.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		60BAE370245A6F8700041374 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				60BAE371245A6FD100041374 /* RealmManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		60CEE1912415A2BE0026C3A3 = {
 			isa = PBXGroup;
 			children = (
 				60CEE19C2415A2BE0026C3A3 /* Roomy */,
 				60CEE19B2415A2BE0026C3A3 /* Products */,
+				AD049FAE4C23BD6D0DECC9BD /* Pods */,
+				E3EA77E48733A621C9F761EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +162,33 @@
 		60CEE19C2415A2BE0026C3A3 /* Roomy */ = {
 			isa = PBXGroup;
 			children = (
-				60CEE19D2415A2BE0026C3A3 /* AppDelegate.swift */,
-				60CEE19F2415A2BE0026C3A3 /* SceneDelegate.swift */,
-				60CEE1A12415A2BE0026C3A3 /* ViewController.swift */,
-				60CEE1A32415A2BE0026C3A3 /* Main.storyboard */,
-				60CEE1A62415A2C00026C3A3 /* Assets.xcassets */,
-				60CEE1A82415A2C00026C3A3 /* LaunchScreen.storyboard */,
-				60CEE1AB2415A2C00026C3A3 /* Info.plist */,
+				60BAE370245A6F8700041374 /* Database */,
+				608CFCC42449CEEE00EBBCFD /* Delegates */,
+				60824C5524536B77005BF32E /* View */,
+				602BD8982450A9D900EC1024 /* Network */,
+				608CFCC62449D1A600EBBCFD /* Model */,
+				608CFCC52449CF1300EBBCFD /* Controllers */,
+				602BD8962450A59000EC1024 /* Resources */,
+				60824C5024534955005BF32E /* Supporting Files */,
 			);
 			path = Roomy;
+			sourceTree = "<group>";
+		};
+		AD049FAE4C23BD6D0DECC9BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				68B404140793F692D7C01007 /* Pods-Roomy.debug.xcconfig */,
+				08E00D3A1A2616B1E87B14D7 /* Pods-Roomy.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E3EA77E48733A621C9F761EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD6AFCEF61CB9B60195C338A /* Pods_Roomy.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +198,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60CEE1AE2415A2C00026C3A3 /* Build configuration list for PBXNativeTarget "Roomy" */;
 			buildPhases = (
+				55950025763F9691DA3AE951 /* [CP] Check Pods Manifest.lock */,
 				60CEE1962415A2BE0026C3A3 /* Sources */,
 				60CEE1972415A2BE0026C3A3 /* Frameworks */,
 				60CEE1982415A2BE0026C3A3 /* Resources */,
+				CAB58FCCBF6A33ADCDE49954 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,20 +253,74 @@
 			files = (
 				60CEE1AA2415A2C00026C3A3 /* LaunchScreen.storyboard in Resources */,
 				60CEE1A72415A2C00026C3A3 /* Assets.xcassets in Resources */,
+				60ED2DC22458E29E00450785 /* RoomTableViewCell.xib in Resources */,
 				60CEE1A52415A2BE0026C3A3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		55950025763F9691DA3AE951 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Roomy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAB58FCCBF6A33ADCDE49954 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Roomy/Pods-Roomy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Roomy/Pods-Roomy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Roomy/Pods-Roomy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		60CEE1962415A2BE0026C3A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60CEE1A22415A2BE0026C3A3 /* ViewController.swift in Sources */,
+				6047DE4F24552BA40032EF7F /* SignUpViewController.swift in Sources */,
+				60824C52245349D1005BF32E /* User.swift in Sources */,
+				60824C54245349E5005BF32E /* Room.swift in Sources */,
+				6047DE4D2454F5A40032EF7F /* Router.swift in Sources */,
 				60CEE19E2415A2BE0026C3A3 /* AppDelegate.swift in Sources */,
+				608CFCC12449CE0F00EBBCFD /* SignInViewController.swift in Sources */,
+				60ED2DC12458E29E00450785 /* RoomTableViewCell.swift in Sources */,
+				608CFCBF2449CDD300EBBCFD /* ListingViewController.swift in Sources */,
+				60ED2DC424591D0900450785 /* AddRoomViewController.swift in Sources */,
 				60CEE1A02415A2BE0026C3A3 /* SceneDelegate.swift in Sources */,
+				608CFCC32449CE3700EBBCFD /* LandingViewController.swift in Sources */,
+				60BAE372245A6FD100041374 /* RealmManager.swift in Sources */,
+				6047DE492454F5570032EF7F /* Request.swift in Sources */,
+				608CFCBD2449CDBF00EBBCFD /* HomeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,11 +462,12 @@
 		};
 		60CEE1AF2415A2C00026C3A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68B404140793F692D7C01007 /* Pods-Roomy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6PYUL46U8;
-				INFOPLIST_FILE = Roomy/Info.plist;
+				INFOPLIST_FILE = "Roomy/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,11 +481,12 @@
 		};
 		60CEE1B02415A2C00026C3A3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08E00D3A1A2616B1E87B14D7 /* Pods-Roomy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6PYUL46U8;
-				INFOPLIST_FILE = Roomy/Info.plist;
+				INFOPLIST_FILE = "Roomy/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
