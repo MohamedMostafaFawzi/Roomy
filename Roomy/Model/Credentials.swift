@@ -7,22 +7,20 @@
 //
 
 import Foundation
-//
-// MARK: - Credentials
-//
+
 struct Credentials: Codable {
-    //
-    // MARK: - Variables And Properties
-    //
+
+    // MARK:- Variables And Properties
+
     var message: String {return messagePrivate ?? ""}
     var authorization: String {return authorizationPrivate ?? ""}    
     
     private var messagePrivate: String?
     private var authorizationPrivate: String?
 }
-//
-// MARK: - User CodingKeys
-//
+
+// MARK:- User CodingKeys
+
 extension Credentials {
     enum CodingKeys: String, CodingKey {
         case messagePrivate = "message"

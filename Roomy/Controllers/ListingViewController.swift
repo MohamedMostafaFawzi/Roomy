@@ -8,26 +8,21 @@
 
 import UIKit
 import Alamofire
-//
-// MARK: - ListingViewController
-//
+
 class ListingViewController: UIViewController {
-    //
-    // MARK: - Variables And Properties
-    //
+    
+    // MARK:- Variables And Properties
+    
     var descriptionListing : String?
-    var imageListing : String?
-    //
-    // MARK: - IBOutlets
-    //
+    
+    // MARK:- IBOutlets
+    
     @IBOutlet weak var roomMainImage: UIImageView!
     @IBOutlet weak var descriptionText: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         descriptionText.text = descriptionListing
-        
     }
     
 }

@@ -12,7 +12,12 @@ import RealmSwift
 
 class RealmManager{
     
+    // MARK:- Variables And Properties
+    
     private static let realm = try! Realm()
+    
+    
+    // MARK:- Static Functions
     
     static func saveRooms(rooms:[Room]){
         try! realm.write {

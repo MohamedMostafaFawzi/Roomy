@@ -10,9 +10,9 @@ import Alamofire
 import RealmSwift
 
 class APIClient {
-    //
+    
     // MARK:- SignIn Request Function
-    //
+    
     static func signIn(email: String, password: String, _ completionHandler: @escaping (Result<Bool, Error>) -> Void) {
         
         AF.request(APIRouter.signIn(email: email, password: password)).responseData { (response: AFDataResponse<Data>) in
@@ -27,7 +27,6 @@ class APIClient {
                         UserKeychain.saveUserToken(userToken: credentials.authorization)
                         completionHandler(.success(true))
                     }
-                    
                 }catch{
                     completionHandler(.success(false))
                 }
@@ -36,9 +35,9 @@ class APIClient {
             }
         }
     }
-    //
+    
     // MARK:- SignUp Request Function
-    //
+    
     static func signUp(name: String, email: String, password: String, _ completionHandler: @escaping (Result<Bool, Error>) -> Void) {
         
         AF.request(APIRouter.signUp(name: name, email: email, password: password)).responseData { (response: AFDataResponse<Data>) in
@@ -61,11 +60,10 @@ class APIClient {
                 completionHandler(.failure(error))
             }
         }
-        
     }
-    //
+    
     // MARK:- AddRoom Request Function
-    //
+    
     static func addRoom(title: String, place: String, price: String, description: String?, authorization: String, _ completionHandler: @escaping (Result<Bool, Error>) -> Void) {
         AF.request(APIRouter.addRoom(title: title, place: place, price: price, description: description ?? "no description")).responseData { (response: AFDataResponse<Data>) in
             switch response.result {
@@ -75,25 +73,19 @@ class APIClient {
                 completionHandler(.failure(error))
             }
         }
-        
     }
-    //
+    
     // MARK:- GetRooms Request Function
-    //
+    
     static func getRooms(_ completionHandler: @escaping (Result<[Room],Error>) -> Void) {
         
-        AF.request(APIRouter.getRooms).responseData { (response) in
+        AF.request(APIRouter.getRooms).responseData { (response: AFDataResponse<Data>) in
             switch response.result{
             case .success(let data):
-                let decoder = JSONDecoder()
-                do{
-                    let roomsList = try decoder.decode([Room].self, from: data)
-                    let realm = try! Realm()
-                    if realm.isEmpty{
-                        RealmManager.saveRooms(rooms: roomsList)
-                    }
+                do {
+                    let roomsList = try JSONDecoder().decode([Room].self, from: data)
                     completionHandler(.success(roomsList))
-                }catch{
+                } catch let error {
                     completionHandler(.failure(error))
                     print("Error Decoding: \(error)")
                 }

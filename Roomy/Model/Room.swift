@@ -8,22 +8,20 @@
 
 import Foundation
 import RealmSwift
-//
-// MARK: - Room
-//
+
 class Room: Object, Codable {
-    //
-    // MARK: - Variables And Properties
-    //
+    
+    // MARK:- Variables And Properties
+    
     @objc dynamic var id: Int
     @objc dynamic var title: String
     @objc dynamic var price: String
     @objc dynamic var place: String
     @objc dynamic var theDescription: String?
 }
-//
-// MARK: - Room CodingKeys
-//
+
+// MARK:- Room CodingKeys
+
 extension Room {
     enum CodingKeys: String, CodingKey  {
         case id

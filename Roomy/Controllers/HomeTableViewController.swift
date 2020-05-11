@@ -7,53 +7,58 @@
 //
 
 import UIKit
-import Alamofire
-import RealmSwift
-//
-// MARK: - HomeTableViewController
-//
-class HomeTableViewController: UIViewController {
-    //
-    // MARK: - Variables And Properties
-    //
-    var rooms = [Room]()
-    //
-    // MARK: - IBOutlets
-    //
-    @IBOutlet weak var roomsTableView: UITableView!
+import NVActivityIndicatorView
+
+class HomeTableViewController: UIViewController, NVActivityIndicatorViewable {
     
+    // MARK:- Variables And Properties
+    
+    var rooms = [Room]()
+    
+    // MARK:- IBOutlets
+    
+    @IBOutlet weak var roomsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCustomCells()
         fetchRooms()
-        
     }
     
-    func fetchRooms() {
-        APIClient.getRooms() { response  in
+    // MARK:- Private Functions
+    
+    private func fetchRooms() {
+        let rooms = RealmManager.getRooms()
+        if rooms.isEmpty {
+            fetchRoomsFromAPI()
+        } else {
+            self.rooms = rooms
+            self.roomsTableView.reloadData()
+            fetchRoomsFromAPI()
+            self.roomsTableView.reloadData()
+        }
+    }
+    
+    private func fetchRoomsFromAPI(){
+        startAnimating(type: .ballRotateChase)
+        APIClient.getRooms { (response) in
+            self.stopAnimating()
             switch response {
-                
             case .success(let rooms):
                 self.rooms = rooms
                 RealmManager.saveRooms(rooms: rooms)
                 self.roomsTableView.reloadData()
-                
-            case .failure:
-                RealmManager.getRooms()
-                self.roomsTableView.reloadData()
+            case .failure(let error):
+                self.showAlert(title: "Error", message: error.localizedDescription)
             }
-            
         }
     }
+    
 }
 
+// MARK:- UITableViewDataSource
 
-//
-// MARK: - UITableViewDataSource
-//
 extension HomeTableViewController: UITableViewDataSource {
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rooms.count
@@ -71,12 +76,10 @@ extension HomeTableViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
-//
-// MARK: - UITableViewDelegate
-//
+
+// MARK:- UITableViewDelegate
+
 extension HomeTableViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -87,15 +90,16 @@ extension HomeTableViewController: UITableViewDelegate {
     }
     
 }
-//
-// MARK: - registerCustomCells
-//
+
+// MARK:- registerCustomCells
+
 extension HomeTableViewController {
     
     func registerCustomCells() {
         let cellNib = UINib(nibName: "RoomTableViewCell", bundle: nil)
         roomsTableView.register(cellNib, forCellReuseIdentifier: "RoomTableViewCell")
     }
+    
 }
 
 

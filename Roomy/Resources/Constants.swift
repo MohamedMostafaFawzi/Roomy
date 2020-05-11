@@ -2,14 +2,14 @@
 //  Constants.swift
 //  Roomy
 //
-//  Created by Mohamed Canaria on 5/9/20.
+//  Created by Mohamed Mostafa Fawzi on 5/9/20.
 //  Copyright © 2020 Mohamed Mostafa Fawzi. All rights reserved.
 //
 
 import Foundation
 
-
 struct Constant {
+    
     struct ProductionServer {
         static let baseURL = "https://roomy-application.herokuapp.com"
     }

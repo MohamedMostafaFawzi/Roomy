@@ -2,31 +2,26 @@
 //  AddRoomViewController.swift
 //  Roomy
 //
-//  Created by Mohamed Canaria on 4/29/20.
+//  Created by Mohamed Mostafa Fawzi on 4/29/20.
 //  Copyright © 2020 Mohamed Mostafa Fawzi. All rights reserved.
 //
 
 import UIKit
-//
-// MARK: - AddRoomViewController
-//
+
 class AddRoomViewController: UIViewController {
-    //
-    // MARK: - IBOutlets
-    //
+    
+    // MARK:- IBOutlets
+    
     @IBOutlet weak var roomTitle: UITextField!
     @IBOutlet weak var roomPlace: UITextField!
     @IBOutlet weak var roomPrice: UITextField!
     @IBOutlet weak var roomDescription: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-    //
-    // MARK: - IBAction
-    //
+    
+    // MARK:- IBAction
     
     @IBAction func addTheRoom(_ sender: Any) {
         
@@ -34,7 +29,6 @@ class AddRoomViewController: UIViewController {
         guard let roomPlace = self.roomPlace.text else { return }
         guard let roomPrice = self.roomPrice.text else { return }
         guard let roomDescription = self.roomDescription.text else { return }
-        
         
         APIClient.addRoom(title: roomTitle, place: roomPlace, price: roomPrice, description: roomDescription, authorization: UserKeychain.retrieveUserToken() ?? "") { response in
             switch response{
@@ -47,7 +41,6 @@ class AddRoomViewController: UIViewController {
                 self.showAlert(title: "Add Room Failed", message: "Please make sure you filled the required info correctly to add the room.")
             }
         }
-        
     }
     
 }

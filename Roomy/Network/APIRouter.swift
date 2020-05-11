@@ -2,7 +2,7 @@
 //  APIRouter.swift
 //  Roomy
 //
-//  Created by Mohamed Canaria on 5/9/20.
+//  Created by Mohamed Mostafa Fawzi on 5/9/20.
 //  Copyright © 2020 Mohamed Mostafa Fawzi. All rights reserved.
 //
 
@@ -10,14 +10,12 @@ import Alamofire
 
 enum APIRouter: URLRequestConvertible {
     
-    
     case signIn(email: String, password: String)
     case signUp(name: String, email: String, password: String)
     case getRooms
     case addRoom(title: String, place: String, price: String, description: String)
     
-    
-    // MARK: - HTTPMethod
+    // MARK:- HTTPMethod
     private var method: HTTPMethod {
         switch self {
         case .signIn:
@@ -31,8 +29,7 @@ enum APIRouter: URLRequestConvertible {
         }
     }
     
-    
-    // MARK: - Path
+    // MARK:- Path
     private var path: String {
         switch self {
         case .signIn:
@@ -46,7 +43,7 @@ enum APIRouter: URLRequestConvertible {
         }
     }
     
-    // MARK: - Parameters
+    // MARK:- Parameters
     private var parameters: Parameters? {
         switch self {
         case .signIn(let email, let password):
@@ -60,7 +57,7 @@ enum APIRouter: URLRequestConvertible {
         }
     }
     
-    // MARK: - URLRequestConvertible
+    // MARK:- URLRequestConvertible
     
     
     func asURLRequest() throws -> URLRequest {
@@ -71,8 +68,6 @@ enum APIRouter: URLRequestConvertible {
         urlRequest.setValue(UserKeychain.retrieveUserToken(), forHTTPHeaderField: "Authorization")
 
         return try URLEncoding.default.encode(urlRequest, with: parameters)
-
-
     }
     
 }
