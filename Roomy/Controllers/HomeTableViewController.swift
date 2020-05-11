@@ -14,40 +14,41 @@ import RealmSwift
 //
 class HomeTableViewController: UIViewController {
     //
+    // MARK: - Variables And Properties
+    //
+    var rooms = [Room]()
+    //
     // MARK: - IBOutlets
     //
     @IBOutlet weak var roomsTableView: UITableView!
     
-    var rooms = [Room]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCustomCells()
-        reloadTable()
-
+        fetchRooms()
+        
     }
     
-    func reloadTable() {
-        Request.getRooms { response in
-            switch response{
+    func fetchRooms() {
+        APIClient.getRooms() { response  in
+            switch response {
+                
             case .success(let rooms):
                 self.rooms = rooms
+                RealmManager.saveRooms(rooms: rooms)
                 self.roomsTableView.reloadData()
                 
             case .failure:
-                let realm = try! Realm()
-                let realmRoom = realm.objects(Room.self)
-                for room in realmRoom{
-                    self.rooms.append(room)
-                }
+                RealmManager.getRooms()
                 self.roomsTableView.reloadData()
             }
+            
         }
     }
-    
-
-
 }
+
+
 //
 // MARK: - UITableViewDataSource
 //
@@ -77,13 +78,12 @@ extension HomeTableViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 //
 extension HomeTableViewController: UITableViewDelegate {
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let listingViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ListingViewController") as! ListingViewController
-        
+        let listingViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ListingViewController") as! ListingViewController
         listingViewController.descriptionListing = rooms[indexPath.row].theDescription
-        listingViewController.imageListing = rooms[indexPath.row].image
-        self.navigationController?.pushViewController(listingViewController, animated: true)
+        listingViewController.modalPresentationStyle = .automatic
+        self.present(listingViewController, animated: true, completion: nil)
     }
     
 }
@@ -91,9 +91,12 @@ extension HomeTableViewController: UITableViewDelegate {
 // MARK: - registerCustomCells
 //
 extension HomeTableViewController {
+    
+    func registerCustomCells() {
+        let cellNib = UINib(nibName: "RoomTableViewCell", bundle: nil)
+        roomsTableView.register(cellNib, forCellReuseIdentifier: "RoomTableViewCell")
+    }
+}
 
-func registerCustomCells() {
-    let cellNib = UINib(nibName: "RoomTableViewCell", bundle: nil)
-    roomsTableView.register(cellNib, forCellReuseIdentifier: "RoomTableViewCell")
-}
-}
+
+

@@ -15,24 +15,22 @@ class Room: Object, Codable {
     //
     // MARK: - Variables And Properties
     //
-    @objc dynamic var id: Int = 0
-    @objc dynamic var title: String = ""
-    @objc dynamic var price: String = ""
-    @objc dynamic var place: String = ""
-    @objc dynamic var image: String = ""
-    @objc dynamic var theDescription: String = ""
-    
-    
+    @objc dynamic var id: Int
+    @objc dynamic var title: String
+    @objc dynamic var price: String
+    @objc dynamic var place: String
+    @objc dynamic var theDescription: String?
+}
+//
+// MARK: - Room CodingKeys
+//
+extension Room {
     enum CodingKeys: String, CodingKey  {
         case id
         case title
         case price
         case place
-        case image
         case theDescription = "description"
-
-        
     }
-    
 }
 

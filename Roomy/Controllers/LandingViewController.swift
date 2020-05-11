@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class LandingViewController: UIViewController {
     
@@ -15,7 +14,5 @@ class LandingViewController: UIViewController {
         super.viewDidLoad()
         
     }
-    
-    
     
 }

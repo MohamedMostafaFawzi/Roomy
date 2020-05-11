@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import Kingfisher
 //
 // MARK: - ListingViewController
 //
@@ -28,10 +27,7 @@ class ListingViewController: UIViewController {
         super.viewDidLoad()
         
         descriptionText.text = descriptionListing
-        roomMainImage.kf.setImage(with: URL(string: imageListing ?? ""))
-
+        
     }
     
-
-
 }

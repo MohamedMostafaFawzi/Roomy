@@ -6,8 +6,9 @@ target 'Roomy' do
   use_frameworks!
 
   # Pods for Roomy
-pod 'Alamofire', '~> 5.1'
+pod 'Alamofire'
 pod 'RealmSwift'
-pod 'Kingfisher'
+pod 'KeychainSwift'
+pod 'NVActivityIndicatorView'
 
 end
