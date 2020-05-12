@@ -13,17 +13,22 @@ import KeychainSwift
 class UserKeychain {
     
     // MARK:- Variables And Properties
-    static let userTokenId = "Token"
+    static let userAuthorization = "userAuthorization"
     
     // MARK:- Internal Class Functions
-    internal class func saveUserToken(userToken : String){
+    internal class func saveAuthorization(authorization: String){
         let keychain = KeychainSwift()
-        keychain.set(userToken, forKey: userTokenId)
+        keychain.set(authorization, forKey: userAuthorization)
     }
     
-    internal class func retrieveUserToken() -> String? {
+    internal class func retrieveAuthorization() -> String? {
         let keychain = KeychainSwift()
-        return keychain.get(userTokenId)
+        return keychain.get(userAuthorization)
+    }
+    
+    internal class func deleteAuthorizationKey(authorizationKey: String) {
+        let keychain = KeychainSwift()
+        keychain.delete(authorizationKey)
     }
     
 }

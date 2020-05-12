@@ -65,7 +65,7 @@ enum APIRouter: URLRequestConvertible {
 
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
          urlRequest.httpMethod = method.rawValue
-        urlRequest.setValue(UserKeychain.retrieveUserToken(), forHTTPHeaderField: "Authorization")
+        urlRequest.setValue(UserKeychain.retrieveAuthorization(), forHTTPHeaderField: "Authorization")
 
         return try URLEncoding.default.encode(urlRequest, with: parameters)
     }

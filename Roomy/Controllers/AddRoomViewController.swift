@@ -25,12 +25,18 @@ class AddRoomViewController: UIViewController {
     
     @IBAction func addTheRoom(_ sender: Any) {
         
-        guard let roomTitle = self.roomTitle.text else { return }
-        guard let roomPlace = self.roomPlace.text else { return }
-        guard let roomPrice = self.roomPrice.text else { return }
+        guard let roomTitle = self.roomTitle.text, !roomTitle.isEmpty else {
+            return self.showAlert(title: "Add Room Failed", message: "Please make sure you add the room title to add the room.")
+        }
+        guard let roomPlace = self.roomPlace.text, !roomPlace.isEmpty else {
+            return self.showAlert(title: "Add Room Failed", message: "Please make sure you add the room place to add the room.")
+        }
+        guard let roomPrice = self.roomPrice.text, !roomPrice.isEmpty else {
+            return self.showAlert(title: "Add Room Failed", message: "Please make sure you add the room price to add the room.")
+        }
         guard let roomDescription = self.roomDescription.text else { return }
         
-        APIClient.addRoom(title: roomTitle, place: roomPlace, price: roomPrice, description: roomDescription, authorization: UserKeychain.retrieveUserToken() ?? "") { response in
+        APIClient.addRoom(title: roomTitle, place: roomPlace, price: roomPrice, description: roomDescription, authorization: UserKeychain.retrieveAuthorization() ?? "") { response in
             switch response{
             case .success(_ ):
                 let homeTableView = UIStoryboard(name: "Main", bundle : nil).instantiateViewController(identifier: "HomeTableViewController" ) as! HomeTableViewController

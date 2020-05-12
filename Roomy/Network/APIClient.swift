@@ -18,13 +18,12 @@ class APIClient {
         AF.request(APIRouter.signIn(email: email, password: password)).responseData { (response: AFDataResponse<Data>) in
             switch response.result{
             case .success(let data):
-                let decoder = JSONDecoder()
                 do{
-                    let credentials = try decoder.decode(Credentials.self, from: data)
+                    let credentials = try JSONDecoder().decode(Credentials.self, from: data)
                     if credentials.authorization.isEmpty{
                         completionHandler(.success(false))
                     }else{
-                        UserKeychain.saveUserToken(userToken: credentials.authorization)
+                        UserKeychain.saveAuthorization(authorization: credentials.authorization)
                         completionHandler(.success(true))
                     }
                 }catch{
@@ -43,16 +42,14 @@ class APIClient {
         AF.request(APIRouter.signUp(name: name, email: email, password: password)).responseData { (response: AFDataResponse<Data>) in
             switch response.result{
             case .success(let data):
-                let decoder = JSONDecoder()
                 do{
-                    let credentials = try decoder.decode(Credentials.self, from: data)
+                    let credentials = try JSONDecoder().decode(Credentials.self, from: data)
                     if credentials.authorization.isEmpty{
                         completionHandler(.success(false))
                     }else{
-                        UserKeychain.saveUserToken(userToken: credentials.authorization)
+                        UserKeychain.saveAuthorization(authorization: credentials.authorization)
                         completionHandler(.success(true))
                     }
-                    
                 }catch{
                     completionHandler(.success(false))
                 }
@@ -64,8 +61,8 @@ class APIClient {
     
     // MARK:- AddRoom Request Function
     
-    static func addRoom(title: String, place: String, price: String, description: String?, authorization: String, _ completionHandler: @escaping (Result<Bool, Error>) -> Void) {
-        AF.request(APIRouter.addRoom(title: title, place: place, price: price, description: description ?? "no description")).responseData { (response: AFDataResponse<Data>) in
+    static func addRoom(title: String, place: String, price: String, description: String, authorization: String, _ completionHandler: @escaping (Result<Bool, Error>) -> Void) {
+        AF.request(APIRouter.addRoom(title: title, place: place, price: price, description: description)).responseData { (response: AFDataResponse<Data>) in
             switch response.result {
             case .success(_):
                 completionHandler(.success(true))

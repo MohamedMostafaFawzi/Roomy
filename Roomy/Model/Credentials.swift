@@ -13,7 +13,7 @@ struct Credentials: Codable {
     // MARK:- Variables And Properties
 
     var message: String {return messagePrivate ?? ""}
-    var authorization: String {return authorizationPrivate ?? ""}    
+    var authorization: String {return authorizationPrivate ?? ""}
     
     private var messagePrivate: String?
     private var authorizationPrivate: String?
