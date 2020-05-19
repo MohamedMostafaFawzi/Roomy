@@ -21,12 +21,5 @@ class RoomTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    // MARK:- configureCell
-
-    func configureCell(title : String, price : String, place : String){
-        roomTitle.text = title
-        roomPlace.text = place
-        roomPrice.text = price
-    }
     
 }

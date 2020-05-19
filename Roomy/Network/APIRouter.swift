@@ -47,26 +47,24 @@ enum APIRouter: URLRequestConvertible {
     private var parameters: Parameters? {
         switch self {
         case .signIn(let email, let password):
-            return [Constant.APIParameterKey.email: email, Constant.APIParameterKey.password: password]
+            return [Constant.Parameter.email: email, Constant.Parameter.password: password]
         case .signUp(let email, let password, let name):
-            return [Constant.APIParameterKey.email: email, Constant.APIParameterKey.password: password, Constant.APIParameterKey.name: name]
+            return [Constant.Parameter.email: email, Constant.Parameter.password: password, Constant.Parameter.name: name]
         case .getRooms:
             return [:]
         case .addRoom(let title, let place, let price, let description):
-            return [Constant.APIParameterKey.title: title, Constant.APIParameterKey.place: place, Constant.APIParameterKey.price: price, Constant.APIParameterKey.description: description]
+            return [Constant.Parameter.title: title, Constant.Parameter.place: place, Constant.Parameter.price: price, Constant.Parameter.description: description]
         }
     }
     
     // MARK:- URLRequestConvertible
     
-    
     func asURLRequest() throws -> URLRequest {
-        let url = try Constant.ProductionServer.baseURL.asURL()
-
+        let url = try Constant.Server.baseURL.asURL()
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-         urlRequest.httpMethod = method.rawValue
-        urlRequest.setValue(UserKeychain.retrieveAuthorization(), forHTTPHeaderField: "Authorization")
-
+        urlRequest.httpMethod = method.rawValue
+        urlRequest.setValue(UserKeychain.retrieveAuthorization(), forHTTPHeaderField: Header.authentication.rawValue)
+        
         return try URLEncoding.default.encode(urlRequest, with: parameters)
     }
     

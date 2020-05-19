@@ -10,11 +10,11 @@ import Foundation
 
 struct Constant {
     
-    struct ProductionServer {
+    struct Server {
         static let baseURL = "https://roomy-application.herokuapp.com"
     }
     
-    struct APIParameterKey {
+    struct Parameter {
         static let name = "name"
         static let email = "email"
         static let password = "password"
@@ -25,7 +25,7 @@ struct Constant {
     }
 }
 
-enum HTTPHeaderField: String {
+enum Header: String {
     case authentication = "Authorization"
     case contentType = "Content-Type"
     case acceptType = "Accept"
