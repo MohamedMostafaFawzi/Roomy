@@ -10,5 +10,6 @@ pod 'Alamofire'
 pod 'RealmSwift'
 pod 'KeychainSwift'
 pod 'NVActivityIndicatorView'
+pod 'IQKeyboardManagerSwift'
 
 end

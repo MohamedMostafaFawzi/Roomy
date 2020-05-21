@@ -19,15 +19,6 @@ class AddRoomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.roomTitle.delegate = self
-        self.roomPlace.delegate = self
-        self.roomPrice.delegate = self
-        self.roomDescription.delegate = self
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-
     }
     
     // MARK:- IBAction
