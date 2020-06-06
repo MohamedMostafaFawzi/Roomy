@@ -21,6 +21,13 @@ extension UIViewController: UITextFieldDelegate {
         self.view.endEditing(true)
         return false
     }
+    
+    func navigateToHomeTableViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeTableView = storyboard.instantiateViewController(identifier: "HomeTableViewController") as! HomeTableViewController
+        homeTableView.modalPresentationStyle = .automatic
+        self.present(homeTableView, animated: true, completion: nil)
+    }
 }
 
 

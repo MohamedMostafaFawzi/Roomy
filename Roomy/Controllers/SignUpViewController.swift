@@ -34,13 +34,9 @@ class SignUpViewController: UIViewController, NVActivityIndicatorViewable {
         APIClient.signUp(name: name, email: email, password: password) { (result) in
             self.stopAnimating()
             switch result {
-                
             case .success(let success):
                 if success {
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let homeTableView = storyboard.instantiateViewController(identifier: "HomeTableViewController") as! HomeTableViewController
-                    homeTableView.modalPresentationStyle = .automatic
-                    self.present(homeTableView, animated: true, completion: nil)
+                    self.navigateToHomeTableViewController()
                 }else {
                     self.showAlert(title: "Sign Up Failed", message: "Please make sure you filled the required info correctly to complete the registration.")
                 }

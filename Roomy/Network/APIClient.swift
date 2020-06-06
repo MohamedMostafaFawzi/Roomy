@@ -15,20 +15,10 @@ class APIClient {
     
     static func signIn(email: String, password: String, _ completionHandler: @escaping (Result<Bool, Error>) -> Void) {
         
-        AF.request(APIRouter.signIn(email: email, password: password)).responseData { (response: AFDataResponse<Data>) in
-            switch response.result{
-            case .success(let data):
-                do{
-                    let credentials = try JSONDecoder().decode(Credentials.self, from: data)
-                    if credentials.authorization.isEmpty{
-                        completionHandler(.success(false))
-                    }else{
-                        UserKeychain.saveAuthorization(authorization: credentials.authorization)
-                        completionHandler(.success(true))
-                    }
-                }catch{
-                    completionHandler(.success(false))
-                }
+        login(route: APIRouter.signIn(email: email, password: password)) { (result) in
+            switch result {
+            case .success(_):
+                completionHandler(.success(true))
             case .failure(let error):
                 completionHandler(.failure(error))
             }
@@ -39,20 +29,10 @@ class APIClient {
     
     static func signUp(name: String, email: String, password: String, _ completionHandler: @escaping (Result<Bool, Error>) -> Void) {
         
-        AF.request(APIRouter.signUp(name: name, email: email, password: password)).responseData { (response: AFDataResponse<Data>) in
-            switch response.result{
-            case .success(let data):
-                do{
-                    let credentials = try JSONDecoder().decode(Credentials.self, from: data)
-                    if credentials.authorization.isEmpty{
-                        completionHandler(.success(false))
-                    }else{
-                        UserKeychain.saveAuthorization(authorization: credentials.authorization)
-                        completionHandler(.success(true))
-                    }
-                }catch{
-                    completionHandler(.success(false))
-                }
+        login(route: APIRouter.signUp(name: name, email: email, password: password)) { (result) in
+            switch result {
+            case .success(_):
+                completionHandler(.success(true))
             case .failure(let error):
                 completionHandler(.failure(error))
             }
@@ -75,7 +55,6 @@ class APIClient {
     // MARK:- GetRooms Request Function
     
     static func getRooms(_ completionHandler: @escaping (Result<[Room],Error>) -> Void) {
-        
         AF.request(APIRouter.getRooms).responseData { (response: AFDataResponse<Data>) in
             switch response.result{
             case .success(let data):
@@ -93,6 +72,28 @@ class APIClient {
         }
     }
     
+    // MARK:- Login Private Function
+    
+    private static func login(route: URLRequestConvertible,  _ completionHandler: @escaping (Result<Bool, Error>) -> Void){
+        AF.request(route).responseData { (response: AFDataResponse<Data>) in
+            switch response.result{
+            case .success(let data):
+                do{
+                    let credentials = try JSONDecoder().decode(Credentials.self, from: data)
+                    if credentials.authorization.isEmpty{
+                        completionHandler(.success(false))
+                    }else{
+                        UserKeychain.saveAuthorization(authorization: credentials.authorization)
+                        completionHandler(.success(true))
+                    }
+                }catch{
+                    completionHandler(.success(false))
+                }
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
+        }
+    }
     
 }
 

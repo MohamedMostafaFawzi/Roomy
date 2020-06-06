@@ -39,9 +39,7 @@ class AddRoomViewController: UIViewController {
         APIClient.addRoom(title: roomTitle, place: roomPlace, price: roomPrice, description: roomDescription, authorization: UserKeychain.retrieveAuthorization() ?? "") { response in
             switch response{
             case .success(_ ):
-                let homeTableView = UIStoryboard(name: "Main", bundle : nil).instantiateViewController(identifier: "HomeTableViewController" ) as! HomeTableViewController
-                homeTableView.modalPresentationStyle = .automatic
-                self.present(homeTableView, animated: true, completion: nil)
+                self.navigateToHomeTableViewController()
             case .failure(let error):
                 print(error.localizedDescription)
                 self.showAlert(title: "Add Room Failed", message: "Please make sure you filled the required info correctly to add the room.")

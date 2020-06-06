@@ -35,10 +35,7 @@ class SignInViewController: UIViewController, NVActivityIndicatorViewable {
             switch result {
             case .success(let success):
                 if success {
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let homeTableView = storyboard.instantiateViewController(identifier: "HomeTableViewController") as! HomeTableViewController
-                    homeTableView.modalPresentationStyle = .automatic
-                    self.present(homeTableView, animated: true, completion: nil)
+                    self.navigateToHomeTableViewController()
                 }else{
                     self.showAlert(title: "Sign In Failed", message: "Please check the email and password and try again.")
                 }
