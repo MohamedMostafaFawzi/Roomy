@@ -11,14 +11,16 @@
 		605214DD24667AD5008A4811 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605214DC24667AD5008A4811 /* UIViewController+Extension.swift */; };
 		605214E024667CA6008A4811 /* UserKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605214DF24667CA6008A4811 /* UserKeychain.swift */; };
 		605214E224668888008A4811 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605214E124668888008A4811 /* Constants.swift */; };
-		605214E424668A80008A4811 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605214E324668A80008A4811 /* APIRouter.swift */; };
-		605214E624668FB1008A4811 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605214E524668FB1008A4811 /* APIClient.swift */; };
 		60824C52245349D1005BF32E /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60824C51245349D1005BF32E /* Credentials.swift */; };
 		60824C54245349E5005BF32E /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60824C53245349E5005BF32E /* Room.swift */; };
 		608CFCBD2449CDBF00EBBCFD /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CFCBC2449CDBF00EBBCFD /* HomeTableViewController.swift */; };
 		608CFCBF2449CDD300EBBCFD /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CFCBE2449CDD300EBBCFD /* ListingViewController.swift */; };
 		608CFCC12449CE0F00EBBCFD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CFCC02449CE0F00EBBCFD /* SignInViewController.swift */; };
 		608CFCC32449CE3700EBBCFD /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CFCC22449CE3700EBBCFD /* LandingViewController.swift */; };
+		60B0F821248D4C7400464683 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B0F820248D4C7400464683 /* TargetType.swift */; };
+		60B0F823248D4F8C00464683 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B0F822248D4F8C00464683 /* BaseAPI.swift */; };
+		60B0F82A248D66DA00464683 /* RoomsNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B0F829248D66DA00464683 /* RoomsNetworking.swift */; };
+		60B0F82C248D76BE00464683 /* RoomsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B0F82B248D76BE00464683 /* RoomsAPI.swift */; };
 		60BAE372245A6FD100041374 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BAE371245A6FD100041374 /* RealmManager.swift */; };
 		60CEE19E2415A2BE0026C3A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CEE19D2415A2BE0026C3A3 /* AppDelegate.swift */; };
 		60CEE1A02415A2BE0026C3A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CEE19F2415A2BE0026C3A3 /* SceneDelegate.swift */; };
@@ -37,14 +39,16 @@
 		605214DC24667AD5008A4811 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		605214DF24667CA6008A4811 /* UserKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserKeychain.swift; sourceTree = "<group>"; };
 		605214E124668888008A4811 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		605214E324668A80008A4811 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
-		605214E524668FB1008A4811 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		60824C51245349D1005BF32E /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		60824C53245349E5005BF32E /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		608CFCBC2449CDBF00EBBCFD /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		608CFCBE2449CDD300EBBCFD /* ListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
 		608CFCC02449CE0F00EBBCFD /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		608CFCC22449CE3700EBBCFD /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		60B0F820248D4C7400464683 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		60B0F822248D4F8C00464683 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		60B0F829248D66DA00464683 /* RoomsNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsNetworking.swift; sourceTree = "<group>"; };
+		60B0F82B248D76BE00464683 /* RoomsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsAPI.swift; sourceTree = "<group>"; };
 		60BAE371245A6FD100041374 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		60CEE19A2415A2BE0026C3A3 /* Roomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roomy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60CEE19D2415A2BE0026C3A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,15 +85,6 @@
 				605214E124668888008A4811 /* Constants.swift */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		602BD8982450A9D900EC1024 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				605214E324668A80008A4811 /* APIRouter.swift */,
-				605214E524668FB1008A4811 /* APIClient.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		605214D8246679F3008A4811 /* Utilities */ = {
@@ -165,6 +160,33 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		60B0F81E248D4B9700464683 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				60B0F828248D66AD00464683 /* Rooms */,
+				60B0F81F248D4C5200464683 /* Base */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		60B0F81F248D4C5200464683 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				60B0F820248D4C7400464683 /* TargetType.swift */,
+				60B0F822248D4F8C00464683 /* BaseAPI.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		60B0F828248D66AD00464683 /* Rooms */ = {
+			isa = PBXGroup;
+			children = (
+				60B0F829248D66DA00464683 /* RoomsNetworking.swift */,
+				60B0F82B248D76BE00464683 /* RoomsAPI.swift */,
+			);
+			path = Rooms;
+			sourceTree = "<group>";
+		};
 		60BAE370245A6F8700041374 /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,7 +220,7 @@
 				605214D8246679F3008A4811 /* Utilities */,
 				60BAE370245A6F8700041374 /* Database */,
 				60824C5524536B77005BF32E /* View */,
-				602BD8982450A9D900EC1024 /* Network */,
+				60B0F81E248D4B9700464683 /* Network */,
 				608CFCC62449D1A600EBBCFD /* Model */,
 				608CFCC52449CF1300EBBCFD /* Controllers */,
 				602BD8962450A59000EC1024 /* Resources */,
@@ -341,21 +363,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				6047DE4F24552BA40032EF7F /* SignUpViewController.swift in Sources */,
-				605214E424668A80008A4811 /* APIRouter.swift in Sources */,
+				60B0F823248D4F8C00464683 /* BaseAPI.swift in Sources */,
 				605214E224668888008A4811 /* Constants.swift in Sources */,
 				60824C52245349D1005BF32E /* Credentials.swift in Sources */,
 				60824C54245349E5005BF32E /* Room.swift in Sources */,
 				605214DD24667AD5008A4811 /* UIViewController+Extension.swift in Sources */,
-				605214E624668FB1008A4811 /* APIClient.swift in Sources */,
+				60B0F82A248D66DA00464683 /* RoomsNetworking.swift in Sources */,
 				60CEE19E2415A2BE0026C3A3 /* AppDelegate.swift in Sources */,
 				608CFCC12449CE0F00EBBCFD /* SignInViewController.swift in Sources */,
 				60ED2DC12458E29E00450785 /* RoomTableViewCell.swift in Sources */,
 				605214E024667CA6008A4811 /* UserKeychain.swift in Sources */,
 				608CFCBF2449CDD300EBBCFD /* ListingViewController.swift in Sources */,
+				60B0F821248D4C7400464683 /* TargetType.swift in Sources */,
 				60ED2DC424591D0900450785 /* AddRoomViewController.swift in Sources */,
 				60CEE1A02415A2BE0026C3A3 /* SceneDelegate.swift in Sources */,
 				608CFCC32449CE3700EBBCFD /* LandingViewController.swift in Sources */,
 				60BAE372245A6FD100041374 /* RealmManager.swift in Sources */,
+				60B0F82C248D76BE00464683 /* RoomsAPI.swift in Sources */,
 				608CFCBD2449CDBF00EBBCFD /* HomeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,10 @@ import UIKit
 
 class AddRoomViewController: UIViewController {
     
+    // MARK:- Variables And Properties
+    
+    let api: RoomsAPIProtocol = RoomsAPI()
+    
     // MARK:- IBOutlets
     
     @IBOutlet weak var roomTitle: UITextField!
@@ -36,12 +40,11 @@ class AddRoomViewController: UIViewController {
         }
         guard let roomDescription = self.roomDescription.text else { return }
         
-        APIClient.addRoom(title: roomTitle, place: roomPlace, price: roomPrice, description: roomDescription, authorization: UserKeychain.retrieveAuthorization() ?? "") { response in
-            switch response{
-            case .success(_ ):
+        api.addRoom(title: roomTitle, place: roomPlace, price: roomPrice, description: roomDescription, authorization: UserKeychain.retrieveAuthorization()) { (result) in
+            switch result {
+            case .success(_):
                 self.navigateToHomeTableViewController()
-            case .failure(let error):
-                print(error.localizedDescription)
+            case .failure(_):
                 self.showAlert(title: "Add Room Failed", message: "Please make sure you filled the required info correctly to add the room.")
             }
         }

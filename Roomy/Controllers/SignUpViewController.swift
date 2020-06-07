@@ -12,6 +12,10 @@ import NVActivityIndicatorView
 
 class SignUpViewController: UIViewController, NVActivityIndicatorViewable {
     
+    // MARK:- Variables And Properties
+
+    let api: RoomsAPIProtocol = RoomsAPI()
+
     // MARK:- IBOutlets
     
     @IBOutlet weak var name: UITextField!
@@ -31,18 +35,14 @@ class SignUpViewController: UIViewController, NVActivityIndicatorViewable {
         let email = self.email.text!
         let password = self.password.text!
         
-        APIClient.signUp(name: name, email: email, password: password) { (result) in
+        api.signUp(name: name, email: email, password: password) { (result) in
             self.stopAnimating()
             switch result {
-            case .success(let success):
-                if success {
-                    self.navigateToHomeTableViewController()
-                }else {
-                    self.showAlert(title: "Sign Up Failed", message: "Please make sure you filled the required info correctly to complete the registration.")
-                }
-            case .failure(let error):
-                print(error.localizedDescription)
-                self.showAlert(title: "Sign Up Failed", message: "\(error.localizedDescription)")
+            case .success( let credentials):
+                UserKeychain.saveAuthorization(authorization: credentials.authorization)
+                self.navigateToHomeTableViewController()
+            case .failure(_):
+                self.showAlert(title: "Sign Up Failed", message: "Please make sure you filled the required info correctly to complete the registration.")
             }
         }
     }

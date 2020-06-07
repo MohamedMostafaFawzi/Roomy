@@ -14,6 +14,7 @@ class HomeTableViewController: UIViewController, NVActivityIndicatorViewable {
     // MARK:- Variables And Properties
     
     var rooms = [Room]()
+    let api: RoomsAPIProtocol = RoomsAPI()
     
     // MARK:- IBOutlets
     
@@ -41,9 +42,9 @@ class HomeTableViewController: UIViewController, NVActivityIndicatorViewable {
     
     private func fetchRoomsFromAPI(){
         startAnimating(type: .ballRotateChase)
-        APIClient.getRooms { (response) in
+        api.getRooms { (result) in
             self.stopAnimating()
-            switch response {
+            switch result {
             case .success(let rooms):
                 self.rooms = rooms
                 RealmManager.saveRooms(rooms: rooms)

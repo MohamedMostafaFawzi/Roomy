@@ -21,9 +21,9 @@ class UserKeychain {
         keychain.set(authorization, forKey: authorizationKey)
     }
     
-    internal class func retrieveAuthorization() -> String? {
+    internal class func retrieveAuthorization() -> String {
         let keychain = KeychainSwift()
-        return keychain.get(authorizationKey)
+        return keychain.get(authorizationKey) ?? ""
     }
     
     internal class func deleteAuthorizationKey(authorizationKey: String) {
