@@ -31,8 +31,8 @@
                                 <color key="textColor" red="0.96599990130000002" green="0.43679869170000002" blue="0.33798140290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your roomate today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xe-bi-h2d">
-                                <rect key="frame" x="84" y="297" width="207.5" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your roommate today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xe-bi-h2d">
+                                <rect key="frame" x="75.5" y="297" width="224" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="6Aq-bg-kdX"/>
                                 </constraints>

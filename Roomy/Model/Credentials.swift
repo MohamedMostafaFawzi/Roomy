@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Credentials: Codable {
+class Credentials: Codable {
 
     // MARK:- Variables And Properties
 

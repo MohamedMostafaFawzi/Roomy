@@ -30,13 +30,13 @@ class AddRoomViewController: UIViewController {
     @IBAction func addTheRoom(_ sender: Any) {
         
         guard let roomTitle = self.roomTitle.text, !roomTitle.isEmpty else {
-            return self.showAlert(title: "Add Room Failed", message: "Please make sure you add the room title to add the room.")
+            return self.showAlert(title: "Failed to Add Room", message: "Please make sure you add the room title to add the room.")
         }
         guard let roomPlace = self.roomPlace.text, !roomPlace.isEmpty else {
-            return self.showAlert(title: "Add Room Failed", message: "Please make sure you add the room place to add the room.")
+            return self.showAlert(title: "Failed to Add Room", message: "Please make sure you add the room place to add the room.")
         }
         guard let roomPrice = self.roomPrice.text, !roomPrice.isEmpty else {
-            return self.showAlert(title: "Add Room Failed", message: "Please make sure you add the room price to add the room.")
+            return self.showAlert(title: "Failed to Add Room", message: "Please make sure you add the room price to add the room.")
         }
         guard let roomDescription = self.roomDescription.text else { return }
         
@@ -45,7 +45,7 @@ class AddRoomViewController: UIViewController {
             case .success(_):
                 self.navigateToHomeTableViewController()
             case .failure(_):
-                self.showAlert(title: "Add Room Failed", message: "Please make sure you filled the required info correctly to add the room.")
+                self.showAlert(title: "Failed to Add Room", message: "Please make sure you filled the required info correctly to add the room.")
             }
         }
     }

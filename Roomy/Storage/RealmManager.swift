@@ -16,7 +16,6 @@ class RealmManager{
     
     private static let realm = try! Realm()
     
-    
     // MARK:- Static Functions
     
     static func saveRooms(rooms:[Room]){
@@ -25,7 +24,7 @@ class RealmManager{
         }
     }
     
-    static func getRooms()-> [Room]{
+    static func getRooms() -> [Room]{
         let rooms = realm.objects(Room.self)
         var roomsArray = [Room]()
         for room in rooms {

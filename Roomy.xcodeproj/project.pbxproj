@@ -187,12 +187,12 @@
 			path = Rooms;
 			sourceTree = "<group>";
 		};
-		60BAE370245A6F8700041374 /* Database */ = {
+		60BAE370245A6F8700041374 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
 				60BAE371245A6FD100041374 /* RealmManager.swift */,
 			);
-			path = Database;
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		60CEE1912415A2BE0026C3A3 = {
@@ -218,10 +218,10 @@
 			children = (
 				608CFCC42449CEEE00EBBCFD /* Delegates */,
 				605214D8246679F3008A4811 /* Utilities */,
-				60BAE370245A6F8700041374 /* Database */,
-				60824C5524536B77005BF32E /* View */,
+				60BAE370245A6F8700041374 /* Storage */,
 				60B0F81E248D4B9700464683 /* Network */,
 				608CFCC62449D1A600EBBCFD /* Model */,
+				60824C5524536B77005BF32E /* View */,
 				608CFCC52449CF1300EBBCFD /* Controllers */,
 				602BD8962450A59000EC1024 /* Resources */,
 				60824C5024534955005BF32E /* Supporting Files */,
