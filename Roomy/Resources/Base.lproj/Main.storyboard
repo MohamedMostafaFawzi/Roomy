@@ -23,7 +23,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roomy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07R-sg-YxB">
-                                <rect key="frame" x="126.5" y="242" width="122.5" height="45"/>
+                                <rect key="frame" x="126" y="242" width="123" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="ziu-tC-eLJ"/>
                                 </constraints>
